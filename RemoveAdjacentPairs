@@ -1,0 +1,26 @@
+public class RemoveAdjacentPairs {
+
+    public static void main(String args[]) {
+
+        System.out.println(removeConsecutives("ABCCBCBA"));
+    }
+
+    public static String removeConsecutives(String str) {
+        int j=0;
+
+        char[] charString = str.toCharArray();
+        for(int i=1;i<charString.length;i++){
+            while(charString[i]==charString[j]) {
+                i++;
+                j--;
+            }
+            charString[++j] = charString[i];
+        }
+        j++;
+        while(j<c.length) {
+            charString[j++] = Character.MIN_VALUE;
+        }
+        return String.copyValueOf(charString);
+    }
+
+}
